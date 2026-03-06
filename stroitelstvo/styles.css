@@ -200,24 +200,89 @@ body {
   color: var(--muted);
 }
 
-.cities {
+/* Блок «Наши каналы»: вертикальные табы + панель */
+.channels__layout {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: 24px;
+}
+
+.channels-tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.city-pill {
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(198, 211, 255, 0.3);
+.channels-tabs__item {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
-  font-weight: 600;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  font-family: inherit;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.city-pill:hover {
-  background: rgba(111, 91, 255, 0.2);
-  border-color: rgba(182, 168, 255, 0.7);
+.channels-tabs__item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(173, 187, 255, 0.35);
+}
+
+.channels-tabs__item--active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(111, 91, 255, 0.35);
+}
+
+.channels-panel {
+  border-radius: 16px;
+  padding: 22px 24px 24px;
+  background: linear-gradient(145deg, rgba(55, 31, 133, 0.85), rgba(37, 23, 93, 0.9));
+  border: 1px solid rgba(173, 187, 255, 0.2);
+  color: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 11, 43, 0.35);
+}
+
+.channels-panel__title {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.channels-panel__stats {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.channels-panel__stats div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.channels-panel__stats dt {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 400;
+}
+
+.channels-panel__stats dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.channels-panel__note {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .steps {
@@ -365,6 +430,10 @@ body {
 }
 
 @media (max-width: 980px) {
+  .channels__layout {
+    grid-template-columns: 1fr;
+  }
+
   .cards--3,
   .steps,
   .hero__stats,

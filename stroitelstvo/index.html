@@ -55,15 +55,26 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="channels">
       <div class="container">
-        <h2 class="section__title">Города размещения</h2>
-        <p class="section__lead">Размещаем рекламу по локальной аудитории в каналах сети «Мой Город».</p>
-        <div class="cities">
-          <span class="city-pill">Жлобин</span>
-          <span class="city-pill">Светлогорск</span>
-          <span class="city-pill">Рогачёв</span>
-          <span class="city-pill">Мозырь</span>
+        <h2 class="section__title">Наши каналы</h2>
+        <p class="section__lead">Рекламируем в городских Viber-каналах Беларуси с живой аудиторией по каждому городу.</p>
+        <div class="channels__layout">
+          <div class="channels-tabs" role="tablist" aria-label="Выбор города">
+            <button type="button" class="channels-tabs__item channels-tabs__item--active" role="tab" aria-selected="true" data-city="Жлобин">Жлобин</button>
+            <button type="button" class="channels-tabs__item" role="tab" aria-selected="false" data-city="Светлогорск">Светлогорск</button>
+            <button type="button" class="channels-tabs__item" role="tab" aria-selected="false" data-city="Рогачёв">Рогачёв</button>
+            <button type="button" class="channels-tabs__item" role="tab" aria-selected="false" data-city="Мозырь">Мозырь</button>
+          </div>
+          <div class="channels-panel" role="tabpanel" aria-live="polite">
+            <h3 class="channels-panel__title" id="channels-panel-title">Жлобин</h3>
+            <dl class="channels-panel__stats">
+              <div><dt>Подписчики</dt><dd id="ch-panel-subscribers">40 000+</dd></div>
+              <div><dt>Просмотры в день</dt><dd id="ch-panel-daily">16–18 тыс.</dd></div>
+              <div><dt>Просмотры в месяц</dt><dd id="ch-panel-monthly">35 тыс.+</dd></div>
+            </dl>
+            <p class="channels-panel__note" id="ch-panel-note">Аудитория города Жлобин</p>
+          </div>
         </div>
       </div>
     </section>
